@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-const base_url = window.location.origin + window.location.pathname;
+//const base_url = window.location.origin + window.location.pathname;
 
 function App() {
   return (
@@ -28,7 +28,9 @@ function Button() {
         <button
           className="btn-qr"
           onClick={() => {
-            fetch(base_url + "api/sign-in")
+            fetch(
+              "vercel-app2-3anlcxdaf-zermenos-projects.vercel.app/api/sign-in"
+            )
               .then((r) =>
                 Promise.all([Promise.resolve(r.headers.get("x-id")), r.json()])
               )

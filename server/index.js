@@ -38,7 +38,7 @@ const requestMap = new Map();
 // GetQR returns auth request
 async function getAuthRequest(req, res) {
   // Audience is verifier id
-  const hostUrl = "http://localhost:5000";
+  const hostUrl = "vercel-app2-3anlcxdaf-zermenos-projects.vercel.app";
   const sessionId = 1;
   const callbackURL = "/api/callback";
   const audience =
@@ -149,3 +149,5 @@ async function callback(req, res) {
     .set("Content-Type", "application/json")
     .send(authResponse);
 }
+
+module.exports = app;
