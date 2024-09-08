@@ -7,11 +7,10 @@ import path from "path";
 const app = express();
 const port = 5000;
 
+//app.use(express.static("../static"));
+
 app.get("/", (req, res) => {
   res.send("Server is ready");
-});
-app.listen(port, () => {
-  console.log("server running on port 5000");
 });
 
 app.get("/api/sign-in", (req, res) => {
@@ -39,8 +38,7 @@ const requestMap = new Map();
 // GetQR returns auth request
 async function getAuthRequest(req, res) {
   // Audience is verifier id
-  const hostUrl =
-    "https://vercel-app2-xxh9-iphsn8dgu-zermenos-projects.vercel.app/";
+  const hostUrl = "http://localhost:5000";
   const sessionId = 1;
   const callbackURL = "/api/callback";
   const audience =
