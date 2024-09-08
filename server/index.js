@@ -40,7 +40,7 @@ const requestMap = new Map();
 async function getAuthRequest(req, res) {
   // Audience is verifier id
   const hostUrl =
-    "https://vercel-app2-xxh9-git-main-zermenos-projects.vercel.app";
+    "https://vercel-app2-xxh9-iphsn8dgu-zermenos-projects.vercel.app/";
   const sessionId = 1;
   const callbackURL = "/api/callback";
   const audience =
