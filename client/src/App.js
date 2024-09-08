@@ -28,7 +28,9 @@ function Button() {
         <button
           className="btn-qr"
           onClick={() => {
-            fetch("https://vercel-app2-xxh9.vercel.app/api/sign-in")
+            fetch(
+              "https://vercel-app2-xxh9-git-main-zermenos-projects.vercel.app/api/sign-in"
+            )
               .then((r) =>
                 Promise.all([Promise.resolve(r.headers.get("x-id")), r.json()])
               )
