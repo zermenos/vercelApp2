@@ -4,8 +4,7 @@ import "./App.css";
 const base_url = window.location.origin + window.location.pathname;
 
 function App() {
-  return (
-    /*
+  return /*
     <header>
       <h1 className="main-content">Everi</h1>
     </header>
@@ -17,8 +16,7 @@ function App() {
         <Link />
       </main>
     <
-    */
-  );
+    */;
 }
 /*
 function Button() {
