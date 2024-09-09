@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
 
-const base_url = window.location.origin + window.location.pathname;
+const base_url = "https://vercel-app2-three.vercel.app/";
+//window.location.origin + window.location.pathname;
 
 function App() {
   return (

@@ -5,9 +5,7 @@ import getRawBody from "raw-body";
 import path from "path";
 
 const app = express();
-const port = 5000;
-
-//app.use(express.static("../static"));
+const PORT = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
   res.send("Server is ready");
@@ -28,8 +26,8 @@ try {
   console.log(error);
 }
 
-app.listen(port, () => {
-  console.log("server running on port 5000");
+app.listen(PORT, () => {
+  console.log("server running on port" + PORT);
 });
 
 // Create a map to store the auth requests and their session IDs
@@ -38,8 +36,7 @@ const requestMap = new Map();
 // GetQR returns auth request
 async function getAuthRequest(req, res) {
   // Audience is verifier id
-  const hostUrl =
-    "https://vercel-app2-xxh9-gqjs5um2w-zermenos-projects.vercel.app";
+  const hostUrl = "https://vercel-app2-git-main-zermenos-projects.vercel.app/";
   const sessionId = 1;
   const callbackURL = "/api/callback";
   const audience =
@@ -66,7 +63,8 @@ async function getAuthRequest(req, res) {
         id: 1724187394,
         query: {
           allowedIssuers: [
-            "did:iden3:privado:main:2ScrbEuw9jLXMapW3DELXBbDco5EURzJZRN1tYj7L7",
+            "*",
+            //"did:iden3:privado:main:2ScrbEuw9jLXMapW3DELXBbDco5EURzJZRN1tYj7L7",
           ],
           context:
             "https://raw.githubusercontent.com/anima-protocol/claims-polygonid/main/schemas/json-ld/pol-v1.json-ld",
@@ -134,6 +132,7 @@ async function callback(req, res) {
   const verifier = await auth.Verifier.newVerifier({
     stateResolver: resolvers,
     circuitsDir: path.join(__dirname, keyDIR),
+    //circuitsDir: path.join(__dirname, "./circuits-dir"),
     ipfsGatewayURL: "https://ipfs.io",
   });
   try {
