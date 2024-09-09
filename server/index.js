@@ -7,9 +7,21 @@ import path from "path";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+const path = require("path");
+
+// Serve static files from the React frontend app
+app.use(express.static(path.join(__dirname, "../client/build")));
+
+// AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/../client/build/index.html"));
+});
+
+/*
 app.get("/", (req, res) => {
   res.send("Server is ready");
 });
+*/
 
 app.get("/api/sign-in", (req, res) => {
   console.log("get Auth Request");
