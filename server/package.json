@@ -13,9 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@iden3/js-iden3-auth": "^1.4.0",
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "nodemon": "^3.1.4",
-    "@iden3/js-iden3-auth": "^1.4.0",
     "open": "^10.1.0"
   },
   "devDependencies": {
