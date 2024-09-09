@@ -5,22 +5,21 @@ const base_url = window.location.origin + window.location.pathname;
 
 function App() {
   return (
-    <>
-      {/* HEADER */}
-      <header>
-        <h1 className="main-content">Everi</h1>
-      </header>
-
+    <header>
+      <h1 className="main-content">Everi</h1>
+    </header>
+    /*
       <main className="main-content">
         <Button />
       </main>
       <main className="main-content">
         <Link />
       </main>
-    </>
+    <
+    */
   );
 }
-
+/*
 function Button() {
   return (
     <>
@@ -57,5 +56,5 @@ function Link() {
     </div>
   );
 }
-
+*/
 export default App;
