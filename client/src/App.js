@@ -1,5 +1,5 @@
 //import React from "react";
-import "./App.css";
+//import "./App.css";
 
 //const base_url = window.location.origin + window.location.pathname;
 
