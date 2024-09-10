@@ -3,8 +3,9 @@ import { auth, resolver, protocol } from "@iden3/js-iden3-auth";
 import open, { openApp, apps } from "open";
 import getRawBody from "raw-body";
 import path from "path";
-
+import opeenURL from "@stdlib/utils-open-url";
 import cors from "cors";
+import openURL from "@stdlib/utils-open-url";
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -94,9 +95,7 @@ async function getAuthRequest(req, res) {
   );
 
   // Open the Polygon ID Verification Web Wallet with the encoded verification request
-  require("openurl").open(
-    `https://wallet.privado.id/#${base64EncodedVerificationRequest}`
-  );
+  openURL(`https://wallet.privado.id/#${base64EncodedVerificationRequest}`);
 
   const scope = request.body.scope ?? [];
   request.body.scope = [...scope, verificationRequest];

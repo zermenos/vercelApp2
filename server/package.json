@@ -13,11 +13,14 @@
   "license": "ISC",
   "dependencies": {
     "@iden3/js-iden3-auth": "^1.4.0",
+    "@stdlib/utils-open-url": "^0.2.2",
     "express": "^4.19.2",
     "open": "^10.1.0",
-    "openurl": "^1.1.1"
+    "openurl": "^1.1.1",
+    "utils": "^0.3.1"
   },
   "devDependencies": {
+    "http-proxy-middleware": "^3.0.2",
     "nodemon": "^3.1.4"
   },
   "type": "module"

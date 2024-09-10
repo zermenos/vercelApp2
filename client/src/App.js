@@ -28,9 +28,9 @@ function Button() {
         <button
           className="btn-qr"
           onClick={() => {
-            fetch(
-              /*base_url + */ "https://vercelapp2-backend.onrender.com/api/sign-in"
-            )
+            fetch(/*base_url + */ "http://localhost:5000/api/sign-in", {
+              mode: "no-cors",
+            })
               .then((r) =>
                 Promise.all([Promise.resolve(r.headers.get("x-id")), r.json()])
               )
