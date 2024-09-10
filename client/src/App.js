@@ -1,24 +1,26 @@
-//import React from "react";
-//import "./App.css";
+import React from "react";
+import "./App.css";
 
-//const base_url = window.location.origin + window.location.pathname;
+const base_url = window.location.origin + window.location.pathname;
 
 function App() {
-  return /*
-    <header>
-      <h1 className="main-content">Everi</h1>
-    </header>
-    
+  return (
+    <>
+      {/* HEADER */}
+      <header>
+        <h1 className="main-content">Everi</h1>
+      </header>
+
       <main className="main-content">
         <Button />
       </main>
       <main className="main-content">
         <Link />
       </main>
-    <
-    */;
+    </>
+  );
 }
-/*
+
 function Button() {
   return (
     <>
@@ -26,7 +28,7 @@ function Button() {
         <button
           className="btn-qr"
           onClick={() => {
-            fetch(base_url + "api/sign-in")
+            fetch(/*base_url + */ "api/sign-in")
               .then((r) =>
                 Promise.all([Promise.resolve(r.headers.get("x-id")), r.json()])
               )
@@ -55,5 +57,5 @@ function Link() {
     </div>
   );
 }
-*/
+
 export default App;

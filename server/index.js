@@ -5,23 +5,11 @@ import getRawBody from "raw-body";
 import path from "path";
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
-const path = require("path");
-
-// Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, "../client/build")));
-
-// AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/../client/build/index.html"));
-});
-
-/*
 app.get("/", (req, res) => {
   res.send("Server is ready");
 });
-*/
 
 app.get("/api/sign-in", (req, res) => {
   console.log("get Auth Request");
@@ -38,8 +26,8 @@ try {
   console.log(error);
 }
 
-app.listen(PORT, () => {
-  console.log("server running on port" + PORT);
+app.listen(port, () => {
+  console.log("server running on port 5000");
 });
 
 // Create a map to store the auth requests and their session IDs
@@ -48,7 +36,8 @@ const requestMap = new Map();
 // GetQR returns auth request
 async function getAuthRequest(req, res) {
   // Audience is verifier id
-  const hostUrl = "http://localhost:5000";
+  const hostUrl =
+    "https://9e28-2806-230-101a-c281-32d7-5abf-e605-6fe6.ngrok-free.app";
   const sessionId = 1;
   const callbackURL = "/api/callback";
   const audience =
