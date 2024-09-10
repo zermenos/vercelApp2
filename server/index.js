@@ -4,8 +4,12 @@ import open, { openApp, apps } from "open";
 import getRawBody from "raw-body";
 import path from "path";
 
+import cors from "cors";
+
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
+
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("Server is ready");
