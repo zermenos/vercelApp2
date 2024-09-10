@@ -31,7 +31,7 @@ function Button() {
             fetch(
               /*base_url + */ "https://vercelapp2-backend.onrender.com/api/sign-in",
               {
-                mode: "no-cors",
+                mode: "cors",
               }
             )
               .then((r) =>
