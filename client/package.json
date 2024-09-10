@@ -4,6 +4,7 @@
   "proxy": "https://vercelapp2-backend.onrender.com",
   "private": true,
   "dependencies": {
+    "@stdlib/utils-open-url": "^0.2.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
