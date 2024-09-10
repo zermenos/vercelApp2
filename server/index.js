@@ -94,7 +94,9 @@ async function getAuthRequest(req, res) {
   );
 
   // Open the Polygon ID Verification Web Wallet with the encoded verification request
-  await open(`https://wallet.privado.id/#${base64EncodedVerificationRequest}`);
+  require("openurl").open(
+    `https://wallet.privado.id/#${base64EncodedVerificationRequest}`
+  );
 
   const scope = request.body.scope ?? [];
   request.body.scope = [...scope, verificationRequest];
